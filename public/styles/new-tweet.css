@@ -15,7 +15,14 @@ textarea {
   outline: none;
 
 }
-
+.actionBar{
+  font-family: "Bungee", sans-serif;
+  font-size: 24px;
+  color: #55514a;
+  display: flex;
+  justify-content: space-between;
+  
+}
 .btn-Tweet {
   background-color: #4151a2;
   color: white;
