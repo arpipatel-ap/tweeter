@@ -40,12 +40,12 @@
   
     <nav>
       <span>tweeter</span>
-      <div class="tweet">
+      <div class="tweet-header">
         <span><strong>What</strong> a new tweet</span>
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
-    <header>
+    <header class ="profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -55,7 +55,7 @@
       </div>
   </header>
 
-  
+      <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
@@ -69,9 +69,31 @@
         </form>
       </section>
 
-  </main>
-    
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+
+      <section class="allTweets">
+        <article class="tweet">
+          <header>
+            <h4>Arpi patel</h4>
+            <p>@arpi</p>
+          </header>
+
+          <p class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+          <footer>
+            <p>10 days ago</p>
+            <p>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-sharp fa-solid fa-heart"></i>
+            </p>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+
+    <main class="container">
+     
+    </main>
   </body>
 </html>
