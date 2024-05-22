@@ -1,0 +1,19 @@
+header{
+  height: 520px;
+  width: 100%;
+  padding-top: 120px;
+  background-color: rgb(239, 127, 7);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e68610;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+/
+}
+
+header h2 {
+  font-size: 24px;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
