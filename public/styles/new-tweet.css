@@ -1,0 +1,23 @@
+.new-tweet {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  border: none;
+  border-bottom: 5px solid black;
+  background-color: #f4f1ec;
+  margin-bottom: 12px;
+  outline: none;
+
+}
+
+.btn-Tweet {
+  background-color: #4151a2;
+  color: white;
+}
+
