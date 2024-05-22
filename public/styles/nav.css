@@ -15,18 +15,18 @@ nav span{
   font-family: 'Bungee', sans-serif;
   font-size: 32px;
 }
-.tweet{
+.tweet-header{
   display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
 }
-.tweet span{
+.tweet-header span{
   font-family: sans-serif;
   font-size: 24px;
 }
-.tweet i{
+.tweet-header i{
   color: #d60525;
   
 }
