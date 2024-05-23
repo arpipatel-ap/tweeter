@@ -1,8 +1,9 @@
 
 $(document).ready(function() {
-  //Tweet the article
 
+// Function to create a tweet element based on tweet data
 const createTweetElement = function(tweet){
+  // Use template literals to create the tweet HTML structure
   const tweetArtical = (`
   <article class="tweet">
   <header>
@@ -27,27 +28,43 @@ const createTweetElement = function(tweet){
   return tweetArtical;
 };
 
-const renderTweets = function(tweets) {
-    tweets = tweets.reverse();
-    $(".allTweets").empty();
 
+// Function to render tweets on the page
+const renderTweets = function(tweets) {
+  $(".allTweets").empty();
+
+   // Loop through each tweet and append it to the tweet container
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
-    $('.allTweets').append($tweet);
+    $('.allTweets').prepend($tweet);
   }
 };
 
-// renderTweets(data);
-// });
 
+// Event listener for form submission
 $("#tweetForm").submit(function(event) {
   event.preventDefault();
-  let data = $(this).serialize();
-  $.post("/tweets/", data).then(function(data) {
-    console.log("Success: ", data);
+
+  // Validate the length of the tweet text
+  let text = $("#tweet-text").val();
+  
+  if (text.length <= 0) {
+    alert("Please Enter your text message");
+    return;
+  } 
+  if (text.length > 140) {
+    alert("Text must not exceed 140 characters");
+    return;
+  }
+
+// Serialize the form data and send a POST request to the server to add the tweet
+let data = $(this).serialize();
+$.post("/tweets/", data).then(function(data) {
+  console.log("Success: ", data);
   });
 });
 
+// Function to load tweets from the server
 const loadtweets = function() {
   $.ajax({
     url: "/tweets",
