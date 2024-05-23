@@ -1,35 +1,3 @@
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1716245916450
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1716332316450
-  }
-]
-
-const calculateDays = function(date) {
-  const oneDay = 24 * 60 * 60 * 1000;
-  const today = new Date();
-
-  const Days = Math.round(Math.abs((date - today) / oneDay));
-  return Days;
-};
 
 $(document).ready(function() {
   //Tweet the article
@@ -46,7 +14,8 @@ const createTweetElement = function(tweet){
   </header>
   <p class="content">${tweet.content.text}</p>
   <footer>
-   <p>${calculateDays(tweet.created_at)} days ago</p>
+
+   <p>${timeago.format(tweet.created_at)}</p>
    <p>
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -59,11 +28,36 @@ const createTweetElement = function(tweet){
 };
 
 const renderTweets = function(tweets) {
+    tweets = tweets.reverse();
+    $(".allTweets").empty();
+
   for (let tweet of tweets) {
     let $tweet = createTweetElement(tweet);
     $('.allTweets').append($tweet);
   }
 };
 
-renderTweets(data);
+// renderTweets(data);
+// });
+
+$("#tweetForm").submit(function(event) {
+  event.preventDefault();
+  let data = $(this).serialize();
+  $.post("/tweets/", data).then(function(data) {
+    console.log("Success: ", data);
+  });
+});
+
+const loadtweets = function() {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    success: function(data) {
+      console.log(data);
+      renderTweets(data);
+    }
+  });
+};
+
+loadtweets();
 });
