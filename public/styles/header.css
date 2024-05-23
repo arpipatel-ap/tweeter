@@ -1,5 +1,4 @@
 header{
-  /* background-color: rgb(239, 127, 7); */
   display:flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +11,7 @@ header.profile{
   width: 100%;
   padding-top: 120px;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  background-color: rgb(239, 127, 7);
 
 }
 
