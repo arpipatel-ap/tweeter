@@ -1,4 +1,10 @@
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(function() {
 
 // Function to create a tweet element based on tweet data
@@ -13,7 +19,7 @@ const createTweetElement = function(tweet){
       </div>
       <p class="handle">${tweet.user.handle}</p>
   </header>
-  <p class="content">${tweet.content.text}</p>
+  <p class="content">${escape (tweet.content.text)}</p>
   <footer>
 
    <p>${timeago.format(tweet.created_at)}</p>
@@ -49,17 +55,20 @@ $("#tweetForm").submit(function(event) {
   let text = $("#tweet-text").val();
   
   if (text.length <= 0) {
-    alert("Please Enter your text message");
+    $(".alert .errorMessage").html("Please Enter your text message");
+    $(".alert").show();
     return;
   } 
   if (text.length > 140) {
-    alert("Text must not exceed 140 characters");
+    $(".alert .errorMessage").html("Text must not exceed 140 characters");
+    $(".alert").show();
     return;
   }
 
 // Serialize the form data and send a POST request to the server to add the tweet
 let data = $(this).serialize();
 $.post("/tweets/", data).then(function(data) {
+  $(".alert").hide();
   $("#tweet-text").val('');
   loadtweets();
   });
