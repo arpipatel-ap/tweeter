@@ -33,10 +33,10 @@ textarea {
 
 .container {
   width: 90%;
-  background-color: #f4f1ec;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: #f4f1ec;
 }
 
 
@@ -46,16 +46,24 @@ article.tweet {
   padding: 16px;
 }
 article.tweet:hover {
-  box-shadow: 5px 5px rgb(178, 178, 241);
+  box-shadow: 5px 5px rgb(76, 47, 88);
 }
 article.tweet p,
-h4 {
+h3{
   margin-top: 15px;
   margin-bottom: 15px;
+  
+}
+.user-ava{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  column-gap: 5px;
 }
 article.tweet header {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
 }
 article.tweet footer {
   display: flex;
