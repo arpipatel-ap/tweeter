@@ -60,7 +60,8 @@ $("#tweetForm").submit(function(event) {
 // Serialize the form data and send a POST request to the server to add the tweet
 let data = $(this).serialize();
 $.post("/tweets/", data).then(function(data) {
-  console.log("Success: ", data);
+  $("#tweet-text").val('');
+  loadtweets();
   });
 });
 
