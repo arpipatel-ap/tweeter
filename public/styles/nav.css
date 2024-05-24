@@ -8,25 +8,27 @@ nav{
   color: #FFFFFF;
   padding: 0 1.5em;
   width: 100%;
-  top: 0;
-  
+  top: 0; 
 }
+
 nav span{
   font-family: 'Bungee', sans-serif;
   font-size: 32px;
 }
+
 .tweet-header{
   display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
+
 .tweet-header span{
   font-family: sans-serif;
   font-size: 24px;
 }
+
 .tweet-header i{
   color: #d60525;
-  
 }
+
