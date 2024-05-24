@@ -1,4 +1,3 @@
-
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -60,7 +59,7 @@ $("#tweetForm").submit(function(event) {
     return;
   } 
   if (text.length > 140) {
-    $(".alert .errorMessage").html("Text must not exceed 140 characters");
+    $(".alert .errorMessage").html("Toooo long !!!!Text must not exceed 140 characters");
     $(".alert").show();
     return;
   }
