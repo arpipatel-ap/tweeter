@@ -3,20 +3,21 @@ header{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
-header.profile{
+.profile {
   height: 520px;
   width: 100%;
-  padding-top: 120px;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-color: rgb(239, 127, 7);
+  padding-top: 120;
 
+  
 }
-
-header h2 {
+.profile.username {
   font-size: 24px;
   color: white;
   font-family: "Source Sans Pro", sans-serif;
 }
+
+ 
