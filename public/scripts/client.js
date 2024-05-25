@@ -69,6 +69,7 @@ let data = $(this).serialize();
 $.post("/tweets/", data).then(function(data) {
   $(".alert").hide();
   $("#tweet-text").val('');
+  $(".counter").val("140");
   loadtweets();
   });
 });
